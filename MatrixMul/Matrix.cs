@@ -42,10 +42,19 @@ namespace MatrixMul
                 }
                 Console.WriteLine("\n");
             }
+
         }
 
-        public void Show(Matrix matrix)
+        public void ShowMatrixParallel()
         {
+            Parallel.For(0, rows, i =>
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        Console.WriteLine(matrix[i, j]);
+                    }
+                }
+            );
 
         }
 
